@@ -5,15 +5,15 @@ Peleg, *Singularly Optimal Randomized Leader Election* (DISC 2020).
 
 ## Struktura
 
-| Plik           | Zawartość                                                                                                  |     |          |
-| -------------- | ---------------------------------------------------------------------------------------------------------- | --- | -------- |
-| `main.go`      | flagi, generowanie sieci i planu budzenia, uruchomienie, podsumowanie                                      |     |          |
-| `network.go`   | synchroniczna sieć: jedna gorutyna = jeden wierzchołek, kanały z buforem 1, bariera rund, logi, statystyki |     |          |
-| `ports.go`     | przyporządkowanie portów do sąsiadów (ustalane przez przeciwnika *oblivious*)                              |     |          |
-| `wakeup.go`    | plan budzenia przez przeciwnika (`-wake all                                                                | one | random`) |
-| `message.go`   | typy wiadomości: `APPROVAL_REQUEST`, `APPROVAL_REPLY`, `WINNER`                                            |     |          |
-| `node.go`      | **stan wierzchołka (`LeaderNode`) i kod jednej rundy (`Round`)**: tu jest algorytm                         |     |          |
-| `adversary.go` | adwersarz interaktywny (`-interactive`)                                                                    |     |          |
+| Plik           | Zawartość                                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| `main.go`      | flagi, generowanie sieci i planu budzenia, uruchomienie, podsumowanie                                      |
+| `network.go`   | synchroniczna sieć: jedna gorutyna = jeden wierzchołek, kanały z buforem 1, bariera rund, logi, statystyki |
+| `ports.go`     | przyporządkowanie portów do sąsiadów (ustalane przez przeciwnika *oblivious*)                              |
+| `wakeup.go`    | plan budzenia przez przeciwnika (`-wake all\|one\|random`)                                                 |
+| `message.go`   | typy wiadomości: `APPROVAL_REQUEST`, `APPROVAL_REPLY`, `WINNER`                                            |
+| `node.go`      | **stan wierzchołka (`LeaderNode`) i kod jednej rundy (`Round`)**: tu jest algorytm                         |
+| `adversary.go` | adwersarz interaktywny (`-interactive`)                                                                    |
 
 Cały algorytm jest w `node.go`; reszta to sieć, adwersarz i uruchamianie.
 
